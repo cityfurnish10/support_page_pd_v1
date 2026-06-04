@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#6C5CE7">
+<title>Need Help? — Cityfurnish</title>
+
+<!-- GA4 Tracking -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-05PLBRM6KD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-05PLBRM6KD');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --cf-purple:       #6C5CE7;
+    --cf-purple-hover: #5A4BD6;
+    --cf-purple-dark:  #4834C5;
+    --cf-purple-wash:  #F0EAFF;
+    --cf-gold:         #F5C518;
+    --cf-gold-hover:   #E6B800;
+    --cf-charcoal:     #222222;
+    --cf-white:        #FFFFFF;
+    --cf-border:       #E4E4F0;
+    --cf-muted:        #888888;
+    --cf-gray-50:      #F9FAFB;
+    --cf-gray-100:     #F3F4F6;
+    --cf-gray-200:     #E5E7EB;
+    --cf-gray-400:     #9CA3AF;
+    --cf-gray-500:     #6B7280;
+    --cf-gray-700:     #374151;
+    --cf-radius:       14px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #F4F4F6;
+    color: var(--cf-charcoal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100dvh;
+  }
+
+  .page-wrapper {
+    max-width: 480px;
+    margin: 0 auto;
+    background: var(--cf-white);
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(150deg, #2A0F6E 0%, #4834C5 45%, var(--cf-purple) 100%);
+    padding: 22px 24px 26px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -50px; right: -50px;
+    width: 180px; height: 180px;
+    background: rgba(255,255,255,0.05); border-radius: 50%;
+  }
+  .hero::after {
+    content: ''; position: absolute; bottom: -20px; left: -30px;
+    width: 120px; height: 120px;
+    background: rgba(255,255,255,0.04); border-radius: 50%;
+  }
+  .logo { margin-bottom: 18px; display: flex; justify-content: center; align-items: center; position: relative; }
+  .logo svg { height: 22px; width: auto; }
+  .logo svg g { fill: #FFFFFF; }
+  .hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px; font-weight: 800; color: #FFFFFF;
+    letter-spacing: -0.5px; line-height: 1.25; margin-bottom: 6px; position: relative;
+  }
+  .hero .subtext {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13.5px; font-weight: 400; color: rgba(255,255,255,0.72); position: relative;
+  }
+
+  .wave-divider { display: block; margin-top: -1px; line-height: 0; }
+  .wave-divider svg { display: block; width: 100%; height: 20px; }
+
+  /* ===== CONTENT ===== */
+  .content-area { background: var(--cf-white); padding-bottom: 4px; }
+  .section-label {
+    padding: 18px 20px 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 10.5px; font-weight: 600; color: var(--cf-muted);
+    text-transform: uppercase; letter-spacing: 1.6px;
+  }
+
+  /* ===== INTENT GRID ===== */
+  .intent-grid {
+    padding: 0 16px 24px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+  }
+  .intent-btn {
+    display: flex; flex-direction: column;
+    align-items: flex-start; justify-content: flex-start;
+    width: 100%; min-height: 120px; padding: 16px 14px 14px;
+    background: var(--cf-white); border: 1.5px solid var(--cf-border);
+    border-radius: var(--cf-radius); cursor: pointer;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s, transform 0.15s;
+    text-align: left; -webkit-tap-highlight-color: transparent;
+    position: relative; overflow: hidden;
+  }
+  .intent-btn::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--cf-purple);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.22s ease;
+    border-radius: var(--cf-radius) var(--cf-radius) 0 0;
+  }
+  .intent-btn:hover { border-color: var(--cf-purple); background: var(--cf-purple-wash); box-shadow: 0 4px 20px rgba(108,92,231,0.12); transform: translateY(-2px); }
+  .intent-btn:hover::before { transform: scaleX(1); }
+  .intent-btn:active { transform: scale(0.97); }
+  .intent-btn .bg-icon {
+    position: absolute; bottom: 8px; right: 8px;
+    width: 58px; height: 58px; opacity: 0.13; pointer-events: none;
+    transition: opacity 0.25s, transform 0.25s;
+  }
+  .intent-btn:hover .bg-icon { opacity: 0.22; transform: scale(1.08); }
+  .intent-btn .bg-icon svg { width: 100%; height: 100%; display: block; fill: var(--cf-purple); stroke: none; }
+  .intent-btn .btn-text { display: flex; flex-direction: column; gap: 5px; position: relative; z-index: 1; }
+  .intent-btn .btn-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px; font-weight: 700; color: var(--cf-charcoal); line-height: 1.3; letter-spacing: -0.1px;
+  }
+  .intent-btn .btn-desc {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10.5px; color: var(--cf-gray-500); line-height: 1.5; font-weight: 400; max-width: 85%;
+  }
+
+  /* ===== MODAL ===== */
+  .modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.52);
+    backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+    z-index: 1000; display: flex; align-items: flex-end; justify-content: center;
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+  }
+  .modal-overlay.active { opacity: 1; visibility: visible; }
+  .modal-sheet {
+    background: var(--cf-white); border-radius: 24px 24px 0 0;
+    width: 100%; max-width: 480px; max-height: 92dvh; overflow-y: auto;
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+    padding-bottom: env(safe-area-inset-bottom, 20px);
+  }
+  .modal-overlay.active .modal-sheet { transform: translateY(0); }
+  .modal-handle-area { display: flex; justify-content: center; padding: 10px 0 4px; cursor: grab; }
+  .modal-handle { width: 40px; height: 4px; border-radius: 100px; background: var(--cf-gray-200); }
+  .modal-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 6px 20px 14px; border-bottom: 1px solid var(--cf-gray-100);
+  }
+  .modal-header h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px; font-weight: 700; color: var(--cf-charcoal);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .modal-header h2 .modal-icon-wrap {
+    width: 34px; height: 34px; background: var(--cf-purple-wash);
+    border-radius: 9px; display: flex; align-items: center; justify-content: center;
+  }
+  .modal-header h2 .modal-icon-wrap svg { width: 18px; height: 18px; fill: var(--cf-purple); stroke: none; display: block; }
+  .modal-close {
+    width: 34px; height: 34px; border-radius: 50%;
+    background: var(--cf-gray-100); border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--cf-gray-500); transition: background 0.15s; -webkit-tap-highlight-color: transparent;
+  }
+  .modal-close:hover { background: var(--cf-gray-200); }
+  .modal-body { padding: 14px 20px 18px; }
+  /* 9:16 video preview — height-driven so vertical format fills correctly */
+  .gif-preview-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .gif-preview {
+    height: 48vh;
+    width: auto;
+    aspect-ratio: 9 / 16;
+    max-width: 100%;
+    border-radius: 14px; overflow: hidden;
+    background: var(--cf-purple-wash);
+    border: 1px solid var(--cf-border);
+    position: relative;
+    flex-shrink: 0;
+  }
+  /* Loading placeholder shimmer */
+  .gif-preview:empty::after,
+  .gif-preview.loading::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(110deg, var(--cf-purple-wash) 30%, #E0D9FF 50%, var(--cf-purple-wash) 70%);
+    background-size: 200% 100%;
+    animation: shimmer 1.4s infinite;
+    border-radius: inherit;
+  }
+  @keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  .gif-preview img, .gif-preview video {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+  }
+  .steps { display: flex; flex-direction: column; gap: 12px; }
+  .step { display: flex; align-items: flex-start; gap: 12px; }
+  .step-number {
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--cf-purple); color: #FFFFFF;
+    font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;
+  }
+  .step-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px; color: var(--cf-gray-700); line-height: 1.55; padding-top: 3px;
+  }
+  .step-text strong { color: var(--cf-charcoal); font-weight: 600; }
+
+  /* Gold CTA — brand rule: Gold = CTA only */
+  .modal-cta {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    width: 100%; padding: 14px; margin-top: 18px;
+    background: var(--cf-gold); color: var(--cf-charcoal);
+    font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700;
+    border: none; border-radius: 20px; cursor: pointer; text-decoration: none;
+    transition: background 0.15s, transform 0.1s;
+    -webkit-tap-highlight-color: transparent; min-height: 48px; letter-spacing: -0.1px;
+  }
+  .modal-cta:hover { background: var(--cf-gold-hover); }
+  .modal-cta:active { transform: scale(0.98); }
+  .modal-cta svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+  /* ===== STILL NEED HELP ===== */
+  .help-section {
+    padding: 24px 20px 28px;
+    background: var(--cf-gray-50); border-top: 1px solid var(--cf-border);
+  }
+  .help-section h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px; font-weight: 700; color: var(--cf-charcoal); margin-bottom: 4px; text-align: center;
+  }
+  .help-section .help-subtext {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px; color: var(--cf-gray-500); text-align: center; margin-bottom: 16px; line-height: 1.5;
+  }
+  .contact-grid { display: flex; flex-direction: column; gap: 10px; }
+  .contact-btn {
+    display: flex; align-items: center; gap: 14px; padding: 14px 18px; border-radius: 12px;
+    font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600;
+    text-decoration: none; transition: all 0.15s ease; -webkit-tap-highlight-color: transparent;
+    border: 1.5px solid var(--cf-border); background: var(--cf-white); color: var(--cf-charcoal);
+    min-height: 58px;
+  }
+  .contact-btn:hover { border-color: var(--cf-purple); }
+  .contact-btn:active { transform: scale(0.97); }
+  .contact-btn svg { width: 22px; height: 22px; flex-shrink: 0; }
+  .contact-btn .contact-label { flex: 1; }
+  .contact-btn .contact-label span {
+    display: block; font-family: 'Montserrat', sans-serif;
+    font-size: 12px; color: var(--cf-muted); font-weight: 400; margin-top: 2px;
+  }
+  .contact-btn .contact-arrow { width: 18px; height: 18px; color: var(--cf-gray-400); }
+  .contact-btn.whatsapp { background: #E7FCF0; border-color: #B8F0D0; color: #128C7E; }
+  .contact-btn.whatsapp:hover { background: #D1F7E3; }
+  .contact-btn.orders { background: var(--cf-purple-wash); border-color: rgba(108,92,231,0.2); color: var(--cf-purple); }
+  .contact-btn.orders:hover { background: #E0D9FF; }
+
+  /* ===== REFER & EARN ===== */
+  .refer-section { padding: 0 20px 28px; }
+  .refer-banner {
+    background: linear-gradient(140deg, #1A0857 0%, #3D1A8C 35%, #5A3EC8 65%, var(--cf-purple) 100%);
+    border-radius: 20px; padding: 28px 20px 28px;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .refer-banner::before {
+    content: ''; position: absolute; top: -50px; right: -50px;
+    width: 160px; height: 160px; background: rgba(255,255,255,0.05); border-radius: 50%;
+  }
+  .refer-banner::after {
+    content: ''; position: absolute; bottom: -30px; left: -30px;
+    width: 110px; height: 110px; background: rgba(255,255,255,0.04); border-radius: 50%;
+  }
+  .refer-badge {
+    display: inline-flex; align-items: center; padding: 5px 14px;
+    background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.28);
+    border-radius: 100px; font-family: 'Poppins', sans-serif;
+    font-size: 12px; font-weight: 600; color: #FFFFFF; margin-bottom: 14px; position: relative;
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  }
+  .refer-banner h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px; font-weight: 900; color: #FFFFFF;
+    margin-bottom: 8px; position: relative; letter-spacing: -0.6px; line-height: 1.15;
+  }
+  .refer-banner h3 .gold { color: var(--cf-gold); }
+  .refer-sub {
+    font-family: 'Poppins', sans-serif; font-size: 13.5px; font-weight: 600;
+    color: rgba(255,255,255,0.82); margin-bottom: 22px; position: relative; line-height: 1.4;
+  }
+  .refer-flow {
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(255,255,255,0.96); border-radius: 14px;
+    padding: 14px 10px; margin-bottom: 22px; position: relative;
+  }
+  .refer-flow-step { display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1; }
+  .refer-flow-icon {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: var(--cf-purple-wash); display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .refer-flow-icon svg {
+    width: 20px; height: 20px; stroke: var(--cf-purple); fill: none;
+    stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round;
+  }
+  .refer-flow-label {
+    font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600;
+    color: var(--cf-charcoal); text-align: center; line-height: 1.3;
+  }
+  .refer-flow-arrow { display: flex; align-items: center; padding: 0 2px; margin-bottom: 20px; flex-shrink: 0; }
+  .refer-flow-arrow svg { width: 24px; height: 10px; }
+  .refer-cta {
+    display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px;
+    background: #FFFFFF; color: var(--cf-purple);
+    font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700;
+    border-radius: 100px; text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.15s; position: relative;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18); min-height: 44px;
+  }
+  .refer-cta:hover { transform: scale(1.03); box-shadow: 0 6px 22px rgba(0,0,0,0.22); }
+  .refer-cta:active { transform: scale(0.98); }
+  .refer-cta svg { width: 15px; height: 15px; }
+
+  /* ===== FOOTER ===== */
+  .page-footer {
+    padding: 20px 24px 28px; text-align: center;
+    background: var(--cf-gray-50); border-top: 1px solid var(--cf-border);
+  }
+  .page-footer .footer-logo { display: flex; justify-content: center; margin-bottom: 6px; }
+  .page-footer .footer-logo a { display: inline-block; line-height: 0; }
+  .page-footer .footer-logo svg { height: 18px; width: auto; }
+  .page-footer .footer-logo svg g { fill: var(--cf-purple); }
+  .page-footer .footer-brand {
+    font-family: 'Montserrat', sans-serif; font-size: 11px; color: var(--cf-muted); margin-top: 4px;
+  }
+
+  /* ===== DESKTOP ===== */
+  @media (min-width: 481px) {
+    body { display: flex; justify-content: center; align-items: flex-start; padding: 24px 16px; background: #DDDDE8; }
+    .page-wrapper { min-height: auto; border-radius: 24px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 24px 64px rgba(108,92,231,0.12); }
+    .modal-overlay { align-items: center; }
+    .modal-sheet { border-radius: 24px; max-height: 80vh; margin: 0 16px; }
+    .modal-overlay.active .modal-sheet { transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="logo">
+      <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 596 128" preserveAspectRatio="xMidYMid meet" aria-label="cityfurnish">
+        <g transform="translate(0,128) scale(0.1,-0.1)" fill="#FFFFFF" stroke="none">
+          <path d="M2355 1205 c-5 -2 -27 -6 -48 -10 -39 -6 -107 -59 -129 -99 -7 -12 -14 -52 -17 -91 l-6 -70 -57 -3 -58 -3 0 -54 0 -55 60 0 60 0 0 -240 0 -240 60 0 60 0 0 240 0 240 90 0 90 0 0 55 0 55 -91 0 -92 0 5 51 c3 28 14 62 25 77 18 24 27 27 74 26 30 0 63 -4 74 -8 17 -6 24 0 43 39 l22 46 -42 18 c-44 19 -105 32 -123 26z"/><path d="M735 1192 c-55 -11 -76 -91 -35 -132 62 -62 162 21 120 100 -11 21 -56 38 -85 32z"/><path d="M4520 1187 c-51 -26 -61 -93 -18 -129 48 -41 128 -2 128 62 0 28 -29 70 -49 70 -5 0 -15 2 -23 5 -7 3 -24 -1 -38 -8z"/><path d="M5330 765 l0 -425 64 0 65 0 3 193 3 194 29 37 c49 65 136 85 206 48 63 -33 70 -62 70 -279 l0 -193 66 0 65 0 -3 213 c-3 210 -3 212 -32 270 -21 44 -40 66 -73 87 -89 57 -221 49 -294 -18 l-39 -34 0 166 0 166 -65 0 -65 0 0 -425z"/><path d="M1048 1103 c-28 -4 -28 -5 -28 -84 l0 -79 -55 0 -55 0 0 -55 0 -55 55 0 55 0 0 -150 c0 -189 11 -243 59 -292 57 -56 155 -73 243 -39 l27 10 -16 49 -16 49 -62 -5 c-58 -4 -63 -3 -83 23 -21 26 -22 39 -22 191 l0 164 91 0 90 0 -3 53 -3 52 -87 3 -88 3 0 84 0 85 -37 -1 c-21 -1 -50 -4 -65 -6z"/><path d="M4900 946 c-114 -24 -170 -81 -170 -171 0 -102 68 -155 231 -181 112 -18 144 -36 144 -84 0 -53 -39 -75 -128 -74 -78 1 -126 17 -175 59 l-30 25 -31 -42 c-17 -23 -31 -45 -31 -49 0 -12 68 -59 118 -82 70 -32 228 -32 294 1 110 54 147 171 84 265 -27 40 -103 71 -210 86 -96 14 -128 28 -140 64 -9 24 -6 31 17 55 25 25 34 27 105 27 64 0 84 -4 120 -25 l43 -24 34 39 c18 22 31 43 28 48 -10 17 -103 56 -158 66 -69 13 -74 13 -145 -3z"/><path d="M253 933 c-61 -21 -136 -92 -163 -155 -34 -78 -33 -203 2 -278 52 -114 149 -174 283 -174 85 0 129 14 198 61 l38 26 -42 43 -42 43 -42 -25 c-31 -18 -56 -24 -98 -24 -69 0 -103 12 -145 53 -91 88 -56 272 61 316 52 20 140 14 180 -13 l35 -24 42 43 42 43 -44 29 c-23 17 -58 35 -77 41 -47 16 -177 14 -228 -5z"/><path d="M3475 934 c-16 -8 -42 -27 -57 -42 l-28 -26 0 37 0 37 -60 0 -60 0 0 -300 0 -300 65 0 65 0 0 193 c0 175 2 195 20 225 38 61 133 88 207 57 19 -8 37 -15 39 -15 4 0 54 97 54 105 0 3 -19 15 -42 25 -54 24 -160 27 -203 4z"/><path d="M4030 941 c-41 -13 -84 -37 -104 -60 -23 -25 -36 -13 -36 32 0 26 -1 27 -60 27 l-60 0 0 -300 0 -300 65 0 65 0 0 178 c0 164 2 181 23 222 31 63 76 90 147 90 67 0 113 -26 141 -80 17 -30 19 -59 19 -222 l0 -188 66 0 66 0 -4 208 c-3 193 -5 210 -26 254 -55 112 -188 173 -302 139z"/><path d="M690 640 l0 -300 65 0 65 0 0 300 0 300 -65 0 -65 0 0 -300z"/><path d="M1370 933 c0 -4 52 -137 116 -296 l117 -288 -48 -112 c-26 -61 -54 -127 -62 -145 l-14 -33 71 3 71 3 53 125 c30 69 113 262 185 429 72 168 131 308 131 313 0 4 -29 8 -66 8 l-65 0 -26 -57 c-14 -32 -56 -133 -93 -226 l-67 -167 -16 42 c-8 24 -44 124 -80 223 l-65 180 -71 3 c-39 2 -71 -1 -71 -5z"/><path d="M2550 747 c0 -141 4 -207 15 -243 51 -170 263 -229 407 -114 l37 30 3 -38 3 -37 58 -3 57 -3 0 301 0 300 -59 0 -59 0 -4 -182 c-4 -204 -9 -220 -74 -278 -35 -31 -40 -32 -105 -28 -55 3 -73 8 -94 28 -55 51 -59 70 -63 273 l-4 187 -59 0 -59 0 0 -193z"/><path d="M4490 640 l0 -300 60 0 60 0 0 300 0 300 -60 0 -60 0 0 -300z"/>
+        </g>
+      </svg>
+    </div>
+    <h1>Need help with your order?</h1>
+    <p class="subtext">Select what you need below.</p>
+  </header>
+
+  <div class="wave-divider">
+    <svg viewBox="0 0 480 20" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,0 L0,12 Q60,20 120,12 Q180,4 240,12 Q300,20 360,12 Q420,4 480,12 L480,0 Z" fill="#6C5CE7"/>
+    </svg>
+  </div>
+
+  <div class="content-area">
+    <div class="section-label">Tap a topic to get started</div>
+
+    <main class="intent-grid" role="list">
+
+      <button class="intent-btn" role="listitem"
+        data-modal="damaged" data-title="Damaged or Missing Item(s)" data-icon="damaged"
+        data-gif="RepairFinal-ezgif.com-video-to-gif-converter.gif"
+        data-step1="Tap on <strong>Account</strong>"
+        data-step2='Go to <strong>"My Service Requests"</strong>'
+        data-step3="Raise a Service Request"
+        data-step4='Tap on <strong>"Repair"</strong>'
+        data-step5="Select your <strong>product(s)</strong> and reason"
+        data-step6="Select schedule date"
+        data-step7="<strong>Create Request</strong>"
+        data-cta-text="Report your concern"
+        data-cta-link="https://cityfurnish.com/service-requests?utm_source=support_page&utm_medium=support_link&utm_campaign=support_pd&utm_content=repair"
+        aria-label="Damaged or Missing Items">
+        <span class="bg-icon"></span>
+        <div class="btn-text">
+          <span class="btn-title">Damaged or<br>Missing item(s)</span>
+          <span class="btn-desc">Report damaged or missing items.</span>
+        </div>
+      </button>
+
+      <button class="intent-btn" role="listitem"
+        data-modal="billing" data-title="Billing & Payments" data-icon="billing"
+        data-gif="BillingFinal-ezgif.com-video-to-gif-converter.gif"
+        data-step1="Tap on <strong>Account</strong>"
+        data-step2='Go to <strong>"Billing and Payments"</strong>'
+        data-step3="View your invoice"
+        data-cta-text="Go to Invoices"
+        data-cta-link="https://cityfurnish.com/invoices?utm_source=support_page&utm_medium=support_link&utm_campaign=support_pd&utm_content=billing"
+        aria-label="Billing and Payments">
+        <span class="bg-icon"></span>
+        <div class="btn-text">
+          <span class="btn-title">Billing &amp; Payments</span>
+          <span class="btn-desc">Invoices, payments &amp; plan details.</span>
+        </div>
+      </button>
+
+      <button class="intent-btn" role="listitem"
+        data-modal="relocation" data-title="Relocation" data-icon="relocation"
+        data-gif="RelocationFinal-ezgif.com-video-to-gif-converter.gif"
+        data-step1="Tap on <strong>Account</strong>"
+        data-step2='Go to <strong>"My Service Requests"</strong>'
+        data-step3="Raise a Service Request"
+        data-step4='Tap on <strong>"Relocation"</strong>'
+        data-step5="Fill in the details"
+        data-step6="Select schedule date"
+        data-step7='Tap on <strong>"Create Request"</strong>'
+        data-cta-text="Raise a Relocation request"
+        data-cta-link="https://cityfurnish.com/service-requests?utm_source=support_page&utm_medium=support_link&utm_campaign=support_pd&utm_content=relocation"
+        aria-label="Relocation">
+        <span class="bg-icon"></span>
+        <div class="btn-text">
+          <span class="btn-title">Relocation</span>
+          <span class="btn-desc">Moving? We'll move your stuff too.</span>
+        </div>
+      </button>
+
+      <button class="intent-btn" role="listitem"
+        data-modal="cancel_return" data-title="Pickup / Product Return" data-icon="cancel_return"
+        data-gif="PickupFinal-ezgif.com-video-to-gif-converter.gif"
+        data-step1="Tap on <strong>Account</strong>"
+        data-step2='Go to <strong>"My Service Requests"</strong>'
+        data-step3="Raise a Service Request"
+        data-step4='Tap on <strong>"Product Return"</strong>'
+        data-step5="Select your <strong>product(s)</strong> and reason"
+        data-step6="<strong>Confirm Pickup</strong>"
+        data-cta-text="Raise a Pickup request"
+        data-cta-link="https://cityfurnish.com/service-requests?utm_source=support_page&utm_medium=support_link&utm_campaign=support_pd&utm_content=pickup"
+        aria-label="Pickup or Product Return">
+        <span class="bg-icon"></span>
+        <div class="btn-text">
+          <span class="btn-title">Pickup / Product<br>Return</span>
+          <span class="btn-desc">Cancel or return your rental.</span>
+        </div>
+      </button>
+
+      <button class="intent-btn" role="listitem"
+        data-modal="upgrade" data-title="BuyBack" data-icon="upgrade"
+        data-gif="BuybackFinal-ezgif.com-video-to-gif-converter.gif"
+        data-step1="Tap on <strong>Account</strong>"
+        data-step2='Go to <strong>"My Service Requests"</strong>'
+        data-step3="Raise a Service Request"
+        data-step4='Tap on <strong>"Buy"</strong>'
+        data-step5="Select product(s) to buy"
+        data-step6='Click on <strong>"Check my Quotation"</strong>'
+        data-cta-text="Get a quotation"
+        data-cta-link="https://cityfurnish.com/service-requests?utm_source=support_page&utm_medium=support_link&utm_campaign=support_pd&utm_content=buyback"
+        aria-label="BuyBack">
+        <span class="bg-icon"></span>
+        <div class="btn-text">
+          <span class="btn-title">BuyBack</span>
+          <span class="btn-desc">Buy the items you're renting.</span>
+        </div>
+      </button>
+
+      <button class="intent-btn" role="listitem"
+        data-modal="refund" data-title="Refunds & Cancellations" data-icon="refund"
+        data-gif="RefundFinal-ezgif.com-video-to-gif-converter.gif"
+        data-step1="Tap on <strong>Account</strong>"
+        data-step2='Go to <strong>"My Order"</strong>'
+        data-step3="Find your order"
+        data-step4='Click on <strong>"Check Refund Status"</strong>'
+        data-cta-text="Track my Refund"
+        data-cta-link="https://cityfurnish.com/my-orders?utm_source=support_page&utm_medium=support_link&utm_campaign=support_pd&utm_content=refund"
+        aria-label="Refunds and Cancellations">
+        <span class="bg-icon"></span>
+        <div class="btn-text">
+          <span class="btn-title">Refunds &amp;<br>Cancellations</span>
+          <span class="btn-desc">Track your refund status.</span>
+        </div>
+      </button>
+
+    </main>
+  </div>
+
+  <!-- STILL NEED HELP -->
+  <section class="help-section">
+    <h3>Still need help?</h3>
+    <p class="help-subtext">We're just a tap away.</p>
+    <div class="contact-grid">
+      <a href="wa-redirect.html?utm_source=support_page&utm_medium=support_link&utm_campaign=support_pd&utm_content=whatsapp" class="contact-btn whatsapp" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span class="contact-label">WhatsApp Support<span>Chat with us instantly</span></span>
+        <svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+      <a href="https://cityfurnish.com/my-orders?utm_source=support_page&utm_medium=support_link&utm_campaign=support_pd&utm_content=myorder" class="contact-btn orders" aria-label="View My Orders">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        <span class="contact-label">My Orders<span>View orders &amp; track status</span></span>
+        <svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- REFER & EARN -->
+  <section class="refer-section">
+    <div class="refer-banner">
+      <div class="refer-badge">1 Referral= ₹500</div>
+      <h3>Refer &amp; Earn upto <span class="gold">₹5000</span></h3>
+      <p class="refer-sub">Real cash — Direct to your account.</p>
+      <div class="refer-flow">
+        <div class="refer-flow-step">
+          <div class="refer-flow-icon">
+            <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+          </div>
+          <span class="refer-flow-label">Share Link</span>
+        </div>
+        <div class="refer-flow-arrow">
+          <svg viewBox="0 0 24 10" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="5" x2="18" y2="5" stroke="#C4B5FD" stroke-width="1.5" stroke-dasharray="3 2"/>
+            <polyline points="14,1 19,5 14,9" fill="none" stroke="#C4B5FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="refer-flow-step">
+          <div class="refer-flow-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+          </div>
+          <span class="refer-flow-label">Friend Rents</span>
+        </div>
+        <div class="refer-flow-arrow">
+          <svg viewBox="0 0 24 10" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="5" x2="18" y2="5" stroke="#C4B5FD" stroke-width="1.5" stroke-dasharray="3 2"/>
+            <polyline points="14,1 19,5 14,9" fill="none" stroke="#C4B5FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="refer-flow-step">
+          <div class="refer-flow-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          </div>
+          <span class="refer-flow-label">Both Earn</span>
+        </div>
+      </div>
+      <a href="https://cityfurnish.com/pages/refer-a-friend?utm_source=support_page&utm_medium=support_link&utm_campaign=support_pd&utm_content=refer%26earn" class="refer-cta">
+        Refer &amp; Earn ₹500
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="page-footer">
+    <div class="footer-logo">
+      <a href="https://cityfurnish.com/?utm_source=support_page&utm_medium=support_link&utm_campaign=support_pd&utm_content=logo" aria-label="cityfurnish">
+        <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 596 128" preserveAspectRatio="xMidYMid meet">
+          <g transform="translate(0,128) scale(0.1,-0.1)" fill="#6C5CE7" stroke="none">
+            <path d="M2355 1205 c-5 -2 -27 -6 -48 -10 -39 -6 -107 -59 -129 -99 -7 -12 -14 -52 -17 -91 l-6 -70 -57 -3 -58 -3 0 -54 0 -55 60 0 60 0 0 -240 0 -240 60 0 60 0 0 240 0 240 90 0 90 0 0 55 0 55 -91 0 -92 0 5 51 c3 28 14 62 25 77 18 24 27 27 74 26 30 0 63 -4 74 -8 17 -6 24 0 43 39 l22 46 -42 18 c-44 19 -105 32 -123 26z"/><path d="M735 1192 c-55 -11 -76 -91 -35 -132 62 -62 162 21 120 100 -11 21 -56 38 -85 32z"/><path d="M4520 1187 c-51 -26 -61 -93 -18 -129 48 -41 128 -2 128 62 0 28 -29 70 -49 70 -5 0 -15 2 -23 5 -7 3 -24 -1 -38 -8z"/><path d="M5330 765 l0 -425 64 0 65 0 3 193 3 194 29 37 c49 65 136 85 206 48 63 -33 70 -62 70 -279 l0 -193 66 0 65 0 -3 213 c-3 210 -3 212 -32 270 -21 44 -40 66 -73 87 -89 57 -221 49 -294 -18 l-39 -34 0 166 0 166 -65 0 -65 0 0 -425z"/><path d="M1048 1103 c-28 -4 -28 -5 -28 -84 l0 -79 -55 0 -55 0 0 -55 0 -55 55 0 55 0 0 -150 c0 -189 11 -243 59 -292 57 -56 155 -73 243 -39 l27 10 -16 49 -16 49 -62 -5 c-58 -4 -63 -3 -83 23 -21 26 -22 39 -22 191 l0 164 91 0 90 0 -3 53 -3 52 -87 3 -88 3 0 84 0 85 -37 -1 c-21 -1 -50 -4 -65 -6z"/><path d="M4900 946 c-114 -24 -170 -81 -170 -171 0 -102 68 -155 231 -181 112 -18 144 -36 144 -84 0 -53 -39 -75 -128 -74 -78 1 -126 17 -175 59 l-30 25 -31 -42 c-17 -23 -31 -45 -31 -49 0 -12 68 -59 118 -82 70 -32 228 -32 294 1 110 54 147 171 84 265 -27 40 -103 71 -210 86 -96 14 -128 28 -140 64 -9 24 -6 31 17 55 25 25 34 27 105 27 64 0 84 -4 120 -25 l43 -24 34 39 c18 22 31 43 28 48 -10 17 -103 56 -158 66 -69 13 -74 13 -145 -3z"/><path d="M253 933 c-61 -21 -136 -92 -163 -155 -34 -78 -33 -203 2 -278 52 -114 149 -174 283 -174 85 0 129 14 198 61 l38 26 -42 43 -42 43 -42 -25 c-31 -18 -56 -24 -98 -24 -69 0 -103 12 -145 53 -91 88 -56 272 61 316 52 20 140 14 180 -13 l35 -24 42 43 42 43 -44 29 c-23 17 -58 35 -77 41 -47 16 -177 14 -228 -5z"/><path d="M3475 934 c-16 -8 -42 -27 -57 -42 l-28 -26 0 37 0 37 -60 0 -60 0 0 -300 0 -300 65 0 65 0 0 193 c0 175 2 195 20 225 38 61 133 88 207 57 19 -8 37 -15 39 -15 4 0 54 97 54 105 0 3 -19 15 -42 25 -54 24 -160 27 -203 4z"/><path d="M4030 941 c-41 -13 -84 -37 -104 -60 -23 -25 -36 -13 -36 32 0 26 -1 27 -60 27 l-60 0 0 -300 0 -300 65 0 65 0 0 178 c0 164 2 181 23 222 31 63 76 90 147 90 67 0 113 -26 141 -80 17 -30 19 -59 19 -222 l0 -188 66 0 66 0 -4 208 c-3 193 -5 210 -26 254 -55 112 -188 173 -302 139z"/><path d="M690 640 l0 -300 65 0 65 0 0 300 0 300 -65 0 -65 0 0 -300z"/><path d="M1370 933 c0 -4 52 -137 116 -296 l117 -288 -48 -112 c-26 -61 -54 -127 -62 -145 l-14 -33 71 3 71 3 53 125 c30 69 113 262 185 429 72 168 131 308 131 313 0 4 -29 8 -66 8 l-65 0 -26 -57 c-14 -32 -56 -133 -93 -226 l-67 -167 -16 42 c-8 24 -44 124 -80 223 l-65 180 -71 3 c-39 2 -71 -1 -71 -5z"/><path d="M2550 747 c0 -141 4 -207 15 -243 51 -170 263 -229 407 -114 l37 30 3 -38 3 -37 58 -3 57 -3 0 301 0 300 -59 0 -59 0 -4 -182 c-4 -204 -9 -220 -74 -278 -35 -31 -40 -32 -105 -28 -55 3 -73 8 -94 28 -55 51 -59 70 -63 273 l-4 187 -59 0 -59 0 0 -193z"/><path d="M4490 640 l0 -300 60 0 60 0 0 300 0 300 -60 0 -60 0 0 -300z"/>
+          </g>
+        </svg>
+      </a>
+    </div>
+    <p class="footer-brand">commitment-free furniture rental</p>
+  </footer>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal-sheet" id="modalSheet">
+    <div class="modal-handle-area"><div class="modal-handle"></div></div>
+    <div class="modal-header">
+      <h2><span class="modal-icon-wrap" id="modalIcon"></span><span id="modalTitle"></span></h2>
+      <button class="modal-close" id="modalClose" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="gif-preview-wrap">
+        <div class="gif-preview loading" id="gifPreview"></div>
+      </div>
+      <div class="steps" id="modalSteps"></div>
+      <a class="modal-cta" id="modalCta" href="#" target="_blank" rel="noopener">
+        <span id="modalCtaText"></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+  var icons = {
+    damaged:      '<svg viewBox="0 0 256 256"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM120,104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm8,88a12,12,0,1,1,12-12A12,12,0,0,1,128,192Z"/></svg>',
+    billing:      '<svg viewBox="0 0 256 256"><path d="M224,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48ZM136,176H120a8,8,0,0,1,0-16h16a8,8,0,0,1,0,16Zm64,0H168a8,8,0,0,1,0-16h32a8,8,0,0,1,0,16ZM32,88V64H224V88Z"/></svg>',
+    relocation:   '<svg viewBox="0 0 256 256"><path d="M255.43,117l-14-35A15.93,15.93,0,0,0,226.58,72H192V64a8,8,0,0,0-8-8H32A16,16,0,0,0,16,72V184a16,16,0,0,0,16,16H49a32,32,0,0,0,62,0h50a32,32,0,0,0,62,0h17a16,16,0,0,0,16-16V120A8.13,8.13,0,0,0,255.43,117ZM80,208a16,16,0,1,1,16-16A16,16,0,0,1,80,208ZM32,136V72H176v64Zm160,72a16,16,0,1,1,16-16A16,16,0,0,1,192,208Zm0-96V88h34.58l9.6,24Z"/></svg>',
+    cancel_return:'<svg viewBox="0 0 256 256"><path d="M224,48V152a16,16,0,0,1-16,16H112v16a8,8,0,0,1-13.66,5.66l-24-24a8,8,0,0,1,0-11.32l24-24A8,8,0,0,1,112,136v16h96V48H96v8a8,8,0,0,1-16,0V48A16,16,0,0,1,96,32H208A16,16,0,0,1,224,48ZM168,192a8,8,0,0,0-8,8v8H48V104h96v16a8,8,0,0,0,13.66,5.66l24-24a8,8,0,0,0,0-11.32l-24-24A8,8,0,0,0,144,72V88H48a16,16,0,0,0-16,16V208a16,16,0,0,0,16,16H160a16,16,0,0,0,16-16v-8A8,8,0,0,0,168,192Z"/></svg>',
+    upgrade:      '<svg viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a48,48,0,0,1-96,0,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0Z"/></svg>',
+    refund:       '<svg viewBox="0 0 256 256"><path d="M216,64H56a8,8,0,0,1,0-16H192a8,8,0,0,0,0-16H56A24,24,0,0,0,32,56V184a24,24,0,0,0,24,24H216a16,16,0,0,0,16-16V80A16,16,0,0,0,216,64Zm-36,80a12,12,0,1,1,12-12A12,12,0,0,1,180,144Z"/></svg>'
+  };
+
+  document.querySelectorAll('.intent-btn').forEach(function(btn) {
+    var k = btn.dataset.icon;
+    if (icons[k]) btn.querySelector('.bg-icon').innerHTML = icons[k];
+  });
+
+  var overlay  = document.getElementById('modalOverlay');
+  var sheet    = document.getElementById('modalSheet');
+  var closeBtn = document.getElementById('modalClose');
+
+  function openModal(btn) {
+    document.getElementById('modalIcon').innerHTML = icons[btn.dataset.icon] || '';
+    document.getElementById('modalTitle').textContent = btn.dataset.title;
+
+    var gifPreview = document.getElementById('gifPreview');
+    var gif = btn.dataset.gif;
+    gifPreview.classList.add('loading');
+    if (gif) {
+      gifPreview.closest('.gif-preview-wrap').style.display = '';
+      if (/\.(mp4|webm|mov)(\?|$)/i.test(gif)) {
+        gifPreview.innerHTML = '<video autoplay loop muted playsinline preload="auto" webkit-playsinline><source src="' + gif + '" type="video/mp4"></video>';
+        var v = gifPreview.querySelector('video');
+        if (v) {
+          v.addEventListener('canplay', function() { gifPreview.classList.remove('loading'); }, { once: true });
+          v.play().catch(function(){});
+        }
+      } else {
+        var img = new Image();
+        img.onload = function() { gifPreview.classList.remove('loading'); };
+        img.src = gif;
+        img.alt = btn.dataset.title + ' guide';
+        gifPreview.innerHTML = '';
+        gifPreview.appendChild(img);
+      }
+    } else {
+      gifPreview.closest('.gif-preview-wrap').style.display = 'none';
+    }
+
+    var stepsEl = document.getElementById('modalSteps');
+    var html = '', n = 1;
+    while (btn.dataset['step' + n]) {
+      html += '<div class="step"><span class="step-number">' + n + '</span><span class="step-text">' + btn.dataset['step' + n] + '</span></div>';
+      n++;
+    }
+    stepsEl.innerHTML = html;
+
+    document.getElementById('modalCtaText').textContent = btn.dataset.ctaText;
+    document.getElementById('modalCta').href = btn.dataset.ctaLink;
+
+    overlay.classList.add('active');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function closeModal() {
+    var v = document.querySelector('#gifPreview video');
+    if (v) { v.pause(); v.removeAttribute('src'); v.load(); }
+    var gifPreview = document.getElementById('gifPreview');
+    gifPreview.innerHTML = '';
+    gifPreview.classList.add('loading');
+    overlay.classList.remove('active');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.intent-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() { openModal(this); });
+  });
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && overlay.classList.contains('active')) closeModal();
+  });
+
+  var startY = 0, currentY = 0, isDragging = false;
+  sheet.addEventListener('touchstart', function(e) {
+    if (sheet.scrollTop <= 0) { startY = e.touches[0].clientY; isDragging = true; }
+  }, { passive: true });
+  sheet.addEventListener('touchmove', function(e) {
+    if (!isDragging) return;
+    currentY = e.touches[0].clientY;
+    var diff = currentY - startY;
+    if (diff > 0) sheet.style.transform = 'translateY(' + diff + 'px)';
+  }, { passive: true });
+  sheet.addEventListener('touchend', function() {
+    if (!isDragging) return;
+    isDragging = false;
+    if (currentY - startY > 120) closeModal();
+    sheet.style.transform = '';
+    startY = 0; currentY = 0;
+  });
+})();
+</script>
+
+</body>
+</html>
