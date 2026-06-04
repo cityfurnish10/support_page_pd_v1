@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connecting to WhatsApp...</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #ECFDF5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #065F46;
+  }
+  .card {
+    text-align: center;
+    padding: 40px;
+  }
+  .spinner {
+    width: 40px; height: 40px;
+    border: 3px solid #D1FAE5;
+    border-top-color: #25D366;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 20px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  h2 { font-size: 18px; margin-bottom: 8px; }
+  p { font-size: 14px; opacity: 0.7; }
+  a { color: #25D366; }
+</style>
+
+<!-- UTM correction — runs before GA4 so the correct UTM is captured -->
+<script>
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var content = params.get('utm_content');
+    // Only skip redirect if already on a valid new UTM value
+    if (content !== 'WA_Support' && content !== 'WA_Support_QR') {
+      window.location.replace(
+        'https://cityfurnish10.github.io/Delivery-Card-v1/wa-redirect.html?utm_source=Delivery_Card&utm_medium=QR&utm_campaign=DC_Support&utm_content=WA_Support_QR'
+      );
+    }
+  })();
+</script>
+
+<!-- GA4 tracking via gtag.js — uses cityfurnish's GA4 measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-05PLBRM6KD"></script>
+<script>
+  // Replace G-05PLBRM6KD with your actual GA4 Measurement ID
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-05PLBRM6KD');
+</script>
+
+<script>
+  // Parse UTM params from current URL and pass them to the redirect
+  var params = new URLSearchParams(window.location.search);
+
+  // WhatsApp destination
+  var waUrl = 'https://wa.me/918448498702?text=' + encodeURIComponent("Hi, I'm facing a problem with");
+
+  // Redirect after a brief delay (enough for GA4 to fire)
+  setTimeout(function() {
+    window.location.href = waUrl;
+  }, 800);
+</script>
+</head>
+<body>
+  <div class="card">
+    <div class="spinner"></div>
+    <h2>Connecting to WhatsApp...</h2>
+    <p>You'll be redirected in a moment.</p>
+    <p style="margin-top: 16px;"><a href="https://wa.me/918448498702?text=Hi%2C%20I%27m%20facing%20a%20problem%20with">Click here if not redirected</a></p>
+  </div>
+</body>
+</html>
